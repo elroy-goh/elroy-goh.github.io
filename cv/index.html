@@ -77,7 +77,7 @@
   <link rel="shortcut icon" href="/assets/img/">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/cv/">
+<link rel="canonical" href="https://elroy-goh.github.io/cv/">
 
 
 
@@ -222,6 +222,12 @@
     <!-- ============================================================
          Scripts — order matters: jQuery → Bootstrap → al-folio bundles
          ============================================================ -->
+
+    <!-- Stub for al-folio's dark/light-mode helper.
+         common.js calls determineComputedTheme() on document.ready; no_defer.js
+         normally defines it, but the compiled bundle expects a theme-switcher UI
+         we don't ship.  This no-op prevents the console ReferenceError. -->
+    <script>window.determineComputedTheme = function() { return 'light'; };</script>
 
     <!-- jQuery: no integrity attr — avoids SRI hash mismatch that blocked
          execution even though the file fetched with HTTP 200. -->
