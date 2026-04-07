@@ -1,9 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <!-- Head -->
-  <head>
-    
-    <!-- Metadata, OpenGraph and Schema.org -->
+  <head><!-- Metadata, OpenGraph and Schema.org -->
 
 
 
@@ -97,10 +94,7 @@
 
   </head>
 
-  <!-- Body -->
-  <body class="fixed-top-nav sticky-bottom-footer">
-    <!-- Header -->
-    <!-- Local override of al-folio's header.liquid — no custom plugin tags. -->
+  <body class=" fixed-top-nav sticky-bottom-footer"><!-- Local override of al-folio's header.liquid — no custom plugin tags. -->
 <header>
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
     <div class="container">
@@ -163,10 +157,8 @@
 </header>
 
 
-    <!-- Content -->
-    <div class="container mt-5" role="main">
-      
-        <!-- Inject custom stylesheet. al-folio's current head.liquid has no hook for
+    <div class="container mt-5">
+      <!-- Inject custom stylesheet. al-folio's current head.liquid has no hook for
      user CSS, so we load it here. HTML5 allows <link> in <body> and all
      browsers apply it correctly. -->
 <link rel="stylesheet" href="/assets/css/custom.css">
@@ -179,9 +171,7 @@
   </header>
 
   <article class="post-content">
-    <h1 id="portfolio-construction--risk-management">Portfolio Construction &amp; Risk Management</h1>
-
-<h2 id="abstract">Abstract</h2>
+    <h2 id="abstract">Abstract</h2>
 
 <p><strong>Research question:</strong> How can alpha forecasts be translated into a portfolio that balances expected return, risk, and turnover? Does a simple risk-constrained optimiser add value over naive signal weighting?</p>
 
@@ -284,11 +274,7 @@ make run     <span class="c"># run the full backtest on synthetic data</span>
   </article>
 </div>
 
-      
-    </div>
-
-    <!-- Footer -->
-    <!-- Local override of al-folio's footer.liquid — no custom plugin tags. -->
+    </div><!-- Local override of al-folio's footer.liquid — no custom plugin tags. -->
 <footer class="footer">
   <div class="container mt-0">
     &copy; Copyright 2026
@@ -305,103 +291,29 @@ make run     <span class="c"># run the full backtest on synthetic data</span>
 </footer>
 
 
-    <!-- JavaScripts -->
-    <!-- jQuery -->
-<script
-  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
-  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-  crossorigin="anonymous"
-></script>
+    <!-- ============================================================
+         Scripts — order matters: jQuery → Bootstrap → al-folio bundles
+         ============================================================ -->
 
-<!-- Bootsrap & MDB scripts -->
-<script src="/assets/js/bootstrap.bundle.min.js"></script>
-<script
-  src=""
-  integrity=""
-  crossorigin="anonymous"
-></script>
+    <!-- jQuery: no integrity attr — avoids SRI hash mismatch that blocked
+         execution even though the file fetched with HTTP 200. -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
+            crossorigin="anonymous"></script>
 
+    <!-- Bootstrap 4 bundle (Popper included) — al-folio compiled asset -->
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
 
+    <!-- al-folio core bundles -->
+    <script src="/assets/js/no_defer.js"></script>
+    <script defer src="/assets/js/common.js"></script>
+    <script defer src="/assets/js/copy_code.js"></script>
+    <script defer src="/assets/js/jupyter_new_tab.js"></script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Load Common JS -->
-<script src="/assets/js/no_defer.js"></script>
-<script defer src="/assets/js/common.js"></script>
-<script defer src="/assets/js/copy_code.js" type="text/javascript"></script>
-
-<!-- Jupyter Open External Links New Tab -->
-<script defer src="/assets/js/jupyter_new_tab.js"></script>
-
-<!-- Badges -->
-
-
-
-
-  <!-- MathJax -->
-  <script
-    defer
-    type="text/javascript"
-    id="MathJax-script"
-    src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"
-    integrity=""
-    crossorigin="anonymous"
-  ></script>
-  
+    <!-- MathJax (only on pages that opt in via front-matter math: true or site.enable_math) -->
+    <script defer id="MathJax-script"
+            src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"
+            crossorigin="anonymous"></script>
     <script src="/assets/js/mathjax-setup.js"></script>
-    <script
-      defer
-      src=""
-      crossorigin="anonymous"
-    ></script>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   </body>
 </html>

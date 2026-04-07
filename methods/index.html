@@ -12,7 +12,9 @@
 <title>
   
   
-    Quantitative Research Dossier
+    
+      Methods & Standards | Quantitative Research Dossier
+    
   
 </title>
 <meta name="author" content="Elroy Goh">
@@ -75,7 +77,7 @@
   <link rel="shortcut icon" href="/assets/img/">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/">
+<link rel="canonical" href="/methods/">
 
 
 
@@ -116,9 +118,9 @@
 
       <div class="collapse navbar-collapse text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="/">
-              Home<span class="sr-only">(current)</span>
+              Home
             </a>
           </li>
           <li class="nav-item">
@@ -131,9 +133,9 @@
               Engineering
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="/methods/">
-              Methods
+              Methods<span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
@@ -161,78 +163,54 @@
 <link rel="stylesheet" href="/assets/css/custom.css">
 
 <div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Methods & Standards</h1>
+  </header>
 
   <article class="post-content">
-    <section class="qr-hero">
-  <h1 class="qr-hero__headline">Quantitative Research</h1>
-  <p class="qr-hero__sub">Systematic cross-asset · commodities microstructure · research engineering</p>
-  <p class="qr-hero__pitch">
-    I build reproducible signal research and portfolio construction pipelines with
-    market-aware validation — leakage controls, realistic cost models, and regime analysis.
-  </p>
-  <ul class="qr-hero__bullets">
-    <li>Trading &amp; risk context: commodities, execution workflows, intraday data</li>
-    <li>Python research stack and production-grade pipelines</li>
-    <li>Three flagship research memos — rigor-first, fully reproducible</li>
-  </ul>
-  <p class="qr-hero__cta">
-    <a class="qr-btn qr-btn--primary" href="/research/2026-01-01-memo-1/">Read flagship memo</a>
-    <a class="qr-btn qr-btn--secondary" href="/assets/pdf/cv.pdf">Download CV</a>
-  </p>
-  <p class="qr-hero__links">
-    <a href="https://github.com/elroy-goh" target="_blank" rel="noopener">GitHub</a> ·
-    <a href="https://www.linkedin.com/in/gjgoh/" target="_blank" rel="noopener">LinkedIn</a> ·
-    <a href="mailto:elroy.ggj@gmail.com">Email</a>
-  </p>
-</section>
+    <p>Good quantitative research depends on rigor more than cleverness. The principles below guide my work and help prevent false discoveries. They reflect well-documented failure modes in quantitative finance: backtest overfitting, look-ahead bias, Sharpe inflation, and underestimated transaction costs. Stating and adhering to these standards is a key differentiator between professional research and hobby backtesting.</p>
 
-<hr />
+<h2 id="data-leakage-controls">Data Leakage Controls</h2>
 
-<h2 id="featured-research">Featured Research</h2>
-
-<div class="qr-card-grid">
-  <div class="qr-card">
-    <h3><a href="/research/2026-01-01-memo-1/">Execution-Aware Microstructure Study</a></h3>
-    <p class="qr-card__tags">Commodity futures · Intraday · Order book</p>
-    <p>How do order-book dynamics in commodity futures affect fill quality and short-horizon returns? Covers leakage-safe walk-forward validation and a cost-model sensitivity analysis.</p>
-  </div>
-  <div class="qr-card">
-    <h3><a href="/research/2026-01-15-memo-2/">Cross-Asset Macro Indicator Analysis</a></h3>
-    <p class="qr-card__tags">Equities · Fixed income · Commodities · Macro</p>
-    <p>Do public macro releases contain cross-asset predictive information? A regime-aware study with explicit handling of publication lags and revision risk.</p>
-  </div>
-  <div class="qr-card">
-    <h3><a href="/research/2026-02-01-memo-3/">Portfolio Construction &amp; Risk Management</a></h3>
-    <p class="qr-card__tags">Portfolio optimisation · Turnover · Risk constraints</p>
-    <p>Translating alpha forecasts into a portfolio that balances expected return, risk, and turnover — with parameter stability and failure-case analysis.</p>
-  </div>
-</div>
-
-<hr />
-
-<h2 id="research-engineering">Research Engineering</h2>
-
-<p>A modular Python library covering the full pipeline: data ingestion and validation, feature computation, model experiment tracking, backtesting harness, and portfolio optimisation. Built for reproducibility — every experiment is seeded, versioned, and runnable from a single command.</p>
-
-<p><a class="qr-btn qr-btn--secondary" href="/engineering/">Explore the research engineering toolkit →</a></p>
-
-<hr />
-
-<h2 id="methods--standards">Methods &amp; Standards</h2>
-
-<p>Rigorous research requires explicit defences against backtest overfitting, leakage, and cost underestimation. This page states my protocols for purged cross-validation, multiple-testing correction, and conservative Sharpe estimation.</p>
-
-<p><a class="qr-btn qr-btn--secondary" href="/methods/">Read about my research hygiene →</a></p>
-
-<hr />
-
-<h2 id="experience-snapshot">Experience Snapshot</h2>
+<p>All experiments are designed to prevent label leakage and look-ahead bias:</p>
 
 <ul>
-  <li><strong>Commodity trading &amp; risk analysis</strong> — hands-on exposure to oil and agricultural markets, execution workflows, and hedging mechanics</li>
-  <li><strong>Quantitative research engineering</strong> — data pipelines, feature stores, and backtest harnesses in Python</li>
-  <li><strong>Risk management &amp; microstructure</strong> — intraday execution, slippage modelling, and capacity analysis</li>
+  <li><strong>Purged and embargoed cross-validation</strong> — cross-validation folds are purged to remove samples whose labels overlap the test period, and an embargo period is applied after each split to prevent information bleed.</li>
+  <li><strong>Chronological timestamp alignment</strong> — when merging data from multiple feeds, timestamps are aligned strictly to avoid inadvertent forward-filling of future values.</li>
+  <li><strong>Strict out-of-sample separation</strong> — walk-forward testing is preferred over random splits; the out-of-sample window is defined before any modelling begins and never revisited.</li>
 </ul>
+
+<h2 id="multiple-testing-discipline">Multiple Testing Discipline</h2>
+
+<p>Exploring many ideas without correction inflates the apparent hit rate. I mitigate this by:</p>
+
+<ul>
+  <li><strong>Pre-registering hypotheses</strong> — success criteria and evaluation metrics are defined before running any experiment.</li>
+  <li><strong>Family-wise error control</strong> — when testing multiple signals simultaneously, I apply Bonferroni or Benjamini–Hochberg corrections to control the false discovery rate.</li>
+  <li><strong>Reporting distributions, not cherries</strong> — results are reported across the full parameter grid or signal universe, not only for the best-performing configuration.</li>
+</ul>
+
+<h2 id="cost--risk-modelling">Cost &amp; Risk Modelling</h2>
+
+<p>Gross returns are meaningless without costs. Every backtest includes:</p>
+
+<ul>
+  <li><strong>Transaction cost models</strong> accounting for commissions, bid-ask spreads, and slippage proportional to trade size and market impact.</li>
+  <li><strong>Turnover constraints</strong> to keep capacity and market impact realistic.</li>
+  <li><strong>Risk metrics</strong> — volatility, maximum drawdown, and factor exposure — to understand the source of returns and identify when they might fail.</li>
+</ul>
+
+<h2 id="conservative-evaluation">Conservative Evaluation</h2>
+
+<ul>
+  <li><strong>Sharpe ratio estimation</strong> adjusts for serial dependence and return non-normality. The standard iid assumption overstates statistical significance; I apply autocorrelation corrections before drawing inference.</li>
+  <li><strong>Robustness analysis</strong> examines parameter sensitivity, sub-period stability, and performance across market regimes.</li>
+  <li><strong>Failure case documentation</strong> is a required section of every research memo. Acknowledging when and why a signal breaks is a credibility signal, not a weakness.</li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+
+<p>These standards collectively guard against the four most common failure modes in quantitative research: leakage, overfitting, cost neglect, and Sharpe inflation. Every flagship memo on this site applies them explicitly and documents where they bind.</p>
 
   </article>
 </div>
