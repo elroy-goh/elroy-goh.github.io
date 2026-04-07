@@ -98,7 +98,7 @@
   </head>
 
   <!-- Body -->
-  <body class=" sticky-bottom-footer">
+  <body class="fixed-top-nav sticky-bottom-footer">
     <!-- Header -->
     <!-- Local override of al-folio's header.liquid — no custom plugin tags. -->
 <header>
@@ -166,7 +166,10 @@
     <!-- Content -->
     <div class="container mt-5" role="main">
       
-        <!-- Local override of al-folio's page.liquid — bibliography tag removed. -->
+        <!-- Inject custom stylesheet. al-folio's current head.liquid has no hook for
+     user CSS, so we load it here. HTML5 allows <link> in <body> and all
+     browsers apply it correctly. -->
+<link rel="stylesheet" href="/assets/css/custom.css">
 
 <div class="post">
   <header class="post-header">
@@ -306,8 +309,8 @@ make run     <span class="c"># fetch public macro data and run backtest on synth
     <!-- JavaScripts -->
     <!-- jQuery -->
 <script
-  src=""
-  integrity=""
+  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
   crossorigin="anonymous"
 ></script>
 
@@ -367,7 +370,7 @@ make run     <span class="c"># fetch public macro data and run backtest on synth
     defer
     type="text/javascript"
     id="MathJax-script"
-    src=""
+    src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"
     integrity=""
     crossorigin="anonymous"
   ></script>
