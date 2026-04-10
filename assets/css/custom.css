@@ -23,6 +23,39 @@
   margin-bottom: 2.5rem;
 }
 
+.qr-hero__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.qr-hero__body {
+  min-width: 0;
+}
+
+.qr-hero__media {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.qr-hero__headshot-wrap {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.qr-hero__headshot {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
 .qr-hero__headline {
   font-size: 2rem;
   font-weight: 700;
@@ -223,6 +256,9 @@
 /* ── Responsive tweaks ─────────────────────────────────────────────────────── */
 
 @media (max-width: 600px) {
+  .qr-hero__layout { grid-template-columns: 1fr; }
+  .qr-hero__media { justify-content: flex-start; }
+  .qr-hero__headshot-wrap { width: 180px; height: 180px; }
   .qr-hero__headline { font-size: 1.5rem; }
   .qr-card-grid      { grid-template-columns: 1fr; }
   .qr-pipeline       { flex-direction: column; align-items: flex-start; }
