@@ -161,19 +161,37 @@
   padding: 1.25rem 1.35rem;
 }
 
+.qr-card--link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.qr-card--link:hover,
+.qr-card--link:focus {
+  color: inherit;
+  text-decoration: none;
+  border-color: #d1d5db;
+  box-shadow: 0 10px 24px rgba(26, 86, 219, 0.08);
+  transform: translateY(-1px);
+}
+
+.qr-card--link:focus-visible {
+  outline: 2px solid var(--qr-accent);
+  outline-offset: 2px;
+}
+
+.qr-card--link h3,
+.qr-card--link p,
+.qr-card--link .qr-card__tags {
+  text-decoration: none;
+}
+
 .qr-card h3 {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.35rem;
-}
-
-.qr-card h3 a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.qr-card h3 a:hover {
-  color: var(--qr-accent);
 }
 
 .qr-card__tags {
@@ -233,6 +251,17 @@
   flex-shrink: 0;
 }
 
+/* ── Page spacing ─────────────────────────────────────────────────────────── */
+
+.post-header {
+  margin-bottom: 2rem;
+}
+
+.post-content h2 {
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+}
+
 /* ── Footer ────────────────────────────────────────────────────────────────── */
 
 .qr-footer {
@@ -251,6 +280,11 @@
 .qr-footer a:hover {
   color: var(--qr-accent);
   text-decoration: underline;
+}
+
+.footer {
+  margin-top: 4rem;
+  padding-top: 1rem;
 }
 
 /* ── Responsive tweaks ─────────────────────────────────────────────────────── */

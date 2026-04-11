@@ -13,7 +13,7 @@
   
   
     
-      Methods & Standards | Quantitative Research Dossier
+      Codex CLI vs Claude CLI | Quantitative Research Dossier
     
   
 </title>
@@ -77,7 +77,7 @@
   <link rel="shortcut icon" href="/assets/img/">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="https://elroy-goh.github.io/methods/">
+<link rel="canonical" href="https://elroy-goh.github.io/notes/2026-04-10-codex-cli-vs-claude-cli/">
 
 
 
@@ -123,19 +123,9 @@
               Home
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/research/">
-              Research
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/engineering/">
-              Engineering
-            </a>
-          </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/methods/">
-              Methods<span class="sr-only">(current)</span>
+            <a class="nav-link" href="/notes/">
+              Notes<span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
@@ -164,53 +154,44 @@
 
 <div class="post">
   <header class="post-header">
-    <h1 class="post-title">Methods & Standards</h1>
+    <h1 class="post-title">Codex CLI vs Claude CLI</h1>
   </header>
 
   <article class="post-content">
-    <p>Good quantitative research depends on rigor more than cleverness. The principles below guide my work and help prevent false discoveries. They reflect well-documented failure modes in quantitative finance: backtest overfitting, look-ahead bias, Sharpe inflation, and underestimated transaction costs. Stating and adhering to these standards is a key differentiator between professional research and hobby backtesting.</p>
+    <p>I have been using Codex in my day-to-day work for a while, and I only started using Claude recently. I am on the lowest plan for both, so token limits are not exactly a side issue. On a student budget, this matters a lot.</p>
 
-<h2 id="data-leakage-controls">Data Leakage Controls</h2>
+<p>As many others have pointed out for a while, both providers are strong in different ways, and both come with their share of weaknesses.</p>
 
-<p>All experiments are designed to prevent label leakage and look-ahead bias:</p>
+<h3 id="token-usage"><strong>Token Usage</strong></h3>
 
-<ul>
-  <li><strong>Purged and embargoed cross-validation</strong> — cross-validation folds are purged to remove samples whose labels overlap the test period, and an embargo period is applied after each split to prevent information bleed.</li>
-  <li><strong>Chronological timestamp alignment</strong> — when merging data from multiple feeds, timestamps are aligned strictly to avoid inadvertent forward-filling of future values.</li>
-  <li><strong>Strict out-of-sample separation</strong> — walk-forward testing is preferred over random splits; the out-of-sample window is defined before any modelling begins and never revisited.</li>
-</ul>
+<p>Anthropic’s Claude burns through tokens quickly. A single prompt on Sonnet 4.6 takes up at least 8% of my 5-hour rolling usage limit before any real work is done. As it iterates and reasons, usage usually reaches 15%-25% by the end of a prompt. There were times (though rare) when a single task consumed up to 80% of my limit.</p>
 
-<h2 id="multiple-testing-discipline">Multiple Testing Discipline</h2>
+<p>In comparison, OpenAI’s Codex is much more forgiving when it comes to token usage. Even while using GPT 5.4 (medium), I could iterate through a few prompts before reaching 10% usage on my 5-hour rolling limit. There were also a few occasions where the weekly limit reset early.</p>
 
-<p>Exploring many ideas without correction inflates the apparent hit rate. I mitigate this by:</p>
+<h3 id="feature-implementation"><strong>Feature Implementation</strong></h3>
 
-<ul>
-  <li><strong>Pre-registering hypotheses</strong> — success criteria and evaluation metrics are defined before running any experiment.</li>
-  <li><strong>Family-wise error control</strong> — when testing multiple signals simultaneously, I apply Bonferroni or Benjamini–Hochberg corrections to control the false discovery rate.</li>
-  <li><strong>Reporting distributions, not cherries</strong> — results are reported across the full parameter grid or signal universe, not only for the best-performing configuration.</li>
-</ul>
+<p>When given the same task list, Claude is exceptional. I can ask it to complete a task as “extensively” as possible, and it usually pushes implementation much further (sometimes at the cost of heavy token usage). Also, with its browser-control capability (which has security implications), it can iterate through web and dashboard designs to arrive at something that actually works.</p>
 
-<h2 id="cost--risk-modelling">Cost &amp; Risk Modelling</h2>
+<p>On the same task list and with the same prompt, Codex will often do the minimum needed to check items off. I once had a response where Codex said it skipped a task because it was “labor intensive.” In that respect, Claude performs better.</p>
 
-<p>Gross returns are meaningless without costs. Every backtest includes:</p>
+<h3 id="mathematical-and-logical-reasoning"><strong>Mathematical and Logical Reasoning</strong></h3>
 
-<ul>
-  <li><strong>Transaction cost models</strong> accounting for commissions, bid-ask spreads, and slippage proportional to trade size and market impact.</li>
-  <li><strong>Turnover constraints</strong> to keep capacity and market impact realistic.</li>
-  <li><strong>Risk metrics</strong> — volatility, maximum drawdown, and factor exposure — to understand the source of returns and identify when they might fail.</li>
-</ul>
+<p>I often consult ChatGPT and Claude for schoolwork. They often explain concepts in a simpler, easier-to-follow way than lectures. This is not to say professors are bad at teaching. These tools are just very good at structuring explanations.</p>
 
-<h2 id="conservative-evaluation">Conservative Evaluation</h2>
+<p>However, despite Claude’s strengths in implementation, there were a few occasions where it made mistakes, especially when implementing financial models. Most of the time it works well, but not always. I have had fewer such cases with Codex.</p>
 
-<ul>
-  <li><strong>Sharpe ratio estimation</strong> adjusts for serial dependence and return non-normality. The standard iid assumption overstates statistical significance; I apply autocorrelation corrections before drawing inference.</li>
-  <li><strong>Robustness analysis</strong> examines parameter sensitivity, sub-period stability, and performance across market regimes.</li>
-  <li><strong>Failure case documentation</strong> is a required section of every research memo. Acknowledging when and why a signal breaks is a credibility signal, not a weakness.</li>
-</ul>
+<h3 id="my-workflow"><strong>My Workflow</strong></h3>
 
-<h2 id="summary">Summary</h2>
+<p>Based on the points above, I eventually settled on a workflow that works best for me. As follows:</p>
 
-<p>These standards collectively guard against the four most common failure modes in quantitative research: leakage, overfitting, cost neglect, and Sharpe inflation. Every flagship memo on this site applies them explicitly and documents where they bind.</p>
+<ol>
+  <li>First, use <code class="language-plaintext highlighter-rouge">$create-plan</code> to get a proper plan down and write to an <code class="language-plaintext highlighter-rouge">implementation_roadmap.md</code> (with either Codex or Claude)</li>
+  <li>Use Claude to implement the features</li>
+  <li>Use Codex to test, debug, and pressure-test logic</li>
+  <li>Iterate as needed</li>
+</ol>
+
+<p>Writing plans to an implementation roadmap file allows easily handoff from agents to agents.</p>
 
   </article>
 </div>
