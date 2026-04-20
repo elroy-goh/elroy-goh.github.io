@@ -83,8 +83,6 @@ Current work in progress includes a research notebook on crack spread signals, a
   </div>
 </div>
 
-A forthcoming notebook will examine bid/ask spreads across various products and times of day, with direct relevance to trade execution. It will also include a dedicated section on tenor liquidity and its implications for roll behaviour across asset classes.
-
 <p><a class="qr-btn qr-btn--secondary" href="/research/">Browse all research →</a></p>
 
 ---

@@ -5,7 +5,7 @@ layout: page
 ---
 
 
-Each memo follows a full research lifecycle: hypothesis, data selection, methodology, validation design, results, robustness checks, failure analysis, and implementation notes. Click through for the full writeup.
+Each research memo presents my approach to quantitative signal research, with a particular emphasis on commodity futures. The focus is on practical frameworks and methodologies developed through hands-on experience in energy markets such as Brent crude, WTI crude, Dubai crude, RBOB gasoline, and Singapore 92 motor gasoline. While my background is rooted in energy, my research interests extend to systematic strategies across multiple asset classes. For more on my experience, see [my CV](/cv).
 
 ---
 
@@ -40,3 +40,6 @@ Each memo follows a full research lifecycle: hypothesis, data selection, methodo
 
 ---
 
+**Disclaimer**
+
+AI tools have assisted in the preparation of these notebooks, primarily for coding and deepening topic understanding. All core ideas, analytical frameworks, and conclusions are my own, informed by professional experience and independent study. Where AI-generated content was used, it was thoroughly reviewed and validated.
