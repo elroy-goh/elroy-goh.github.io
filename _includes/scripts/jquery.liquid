@@ -1,0 +1,19 @@
+<!-- Local override: always load jQuery from CDN.
+     al-folio's default.liquid calls this include before its own JS bundles,
+     so Bootstrap (which requires jQuery) always finds $ in scope. -->
+{%- if site.third_party_libraries.jquery %}
+  {%- if site.third_party_libraries.download %}
+<script src="{{ '/assets/js/vendor/jquery.min.js' | relative_url }}"></script>
+  {%- elsif site.third_party_libraries.jquery.integrity.js and site.third_party_libraries.jquery.integrity.js != "" %}
+<script src="{{ site.third_party_libraries.jquery.url.js }}"
+        integrity="{{ site.third_party_libraries.jquery.integrity.js }}"
+        crossorigin="anonymous"></script>
+  {%- else %}
+<script src="{{ site.third_party_libraries.jquery.url.js }}"></script>
+  {%- endif %}
+{%- else %}
+<!-- third_party_libraries.jquery not set — loading jQuery from hard-coded fallback CDN -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+{%- endif %}

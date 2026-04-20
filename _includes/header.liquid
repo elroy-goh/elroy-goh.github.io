@@ -1,0 +1,53 @@
+<!-- Local override of al-folio's header.liquid — no custom plugin tags. -->
+<header>
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+
+      {%- if site.first_name or site.last_name %}
+      <a class="navbar-brand title font-weight-lighter"
+         href="{{ '/' | relative_url }}">
+        {%- if site.first_name %}
+          <span class="font-weight-bold">{{ site.first_name }}</span>&nbsp;
+        {%- endif %}
+        {{ site.last_name }}
+      </a>
+      {%- else %}
+      <a class="navbar-brand title font-weight-lighter"
+         href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      {%- endif %}
+
+      <button class="navbar-toggler collapsed ml-auto"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          {%- for link in site.nav_links %}
+          {%- assign is_active = false %}
+          {%- if page.url == link.url %}
+            {%- assign is_active = true %}
+          {%- elsif link.url != '/' and page.url contains link.url %}
+            {%- assign is_active = true %}
+          {%- endif %}
+          <li class="nav-item {%- if is_active %} active{%- endif %}">
+            <a class="nav-link" href="{{ link.url | relative_url }}">
+              {{ link.name }}
+              {%- if is_active %}<span class="sr-only">(current)</span>{%- endif %}
+            </a>
+          </li>
+          {%- endfor %}
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</header>

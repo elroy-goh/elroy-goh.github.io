@@ -1,0 +1,171 @@
+# =============================================================================
+# Site metadata
+# Replace the placeholder values with your own details before publishing.
+# =============================================================================
+
+title:       "Quantitative Research Dossier"
+first_name:  "Elroy"
+last_name:   "Goh"
+email:       "elroy.ggj@gmail.com"
+description: >-
+  Systematic cross-asset and commodities microstructure research with
+  production-grade research engineering.
+
+url:     "https://elroy-goh.github.io"
+baseurl: ""   # leave empty for a user/org site (no subdirectory)
+
+# =============================================================================
+# Theme
+# al-folio is used via jekyll-remote-theme.  The theme's _plugins/ directory
+# is NOT loaded by jekyll-remote-theme, so we override the few includes/
+# layouts that use custom Liquid tags locally (header.liquid, footer.liquid,
+# page.html) — see those files in this repo.
+# =============================================================================
+
+remote_theme: "alshedivat/al-folio"   # latest master — head.liquid / footer.liquid present here
+
+# =============================================================================
+# Navigation
+# Consumed by our local _includes/header.liquid override.
+# =============================================================================
+
+nav_links:
+  - name: Home
+    url:  /
+  - name: Research
+    url:  /research/
+  - name: Notes
+    url:  /notes/
+  - name: CV
+    url:  /cv/
+  - name: Contact
+    url:  /contact/
+
+# =============================================================================
+# Social links
+# Consumed by our local _includes/footer.liquid override.
+# =============================================================================
+
+social:
+  github_username:   elroy-goh
+  linkedin_username: gjgoh
+
+# =============================================================================
+# Collections
+# _projects/ holds the flagship research memos, rendered at /research/<slug>/
+# =============================================================================
+
+collections:
+  projects:
+    output: true
+    permalink: /research/:path/
+  notes:
+    output: true
+    permalink: /notes/:path/
+
+# =============================================================================
+# Front-matter defaults
+# =============================================================================
+
+defaults:
+  - scope:
+      path: "_pages"
+      type: ""
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: page
+      math:   true
+  - scope:
+      path: ""
+      type: "notes"
+    values:
+      layout: page
+
+# =============================================================================
+# Layout behaviour
+# al-folio's default.liquid reads these to set body classes.
+# =============================================================================
+
+navbar_fixed: true
+footer_fixed: false
+
+# =============================================================================
+# Third-party libraries
+# al-folio's _includes/scripts/*.liquid files read these to emit <script> tags.
+# Without this block jQuery never loads, breaking Bootstrap and all JS.
+# =============================================================================
+
+third_party_libraries:
+  download: false   # use CDN, not local copies
+  jquery:
+    integrity:
+      js: "sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    url:
+      js: "https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
+  bootstrap-table:
+    integrity:
+      css: "sha256-uRX+PiRTR4ysE8FNK6qsZbBKJc4iEXM5XA5EsQxo3S4="
+      js:  "sha256-bLASQBjjhGqfQ6fDDrb6BzTVNJJZhM7XP7uJuH3YRZY="
+    url:
+      css: "https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.1/dist/bootstrap-table.min.css"
+      js:  "https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"
+  mathjax:
+    url:
+      js: "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"
+  masonry:
+    integrity:
+      js: "sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI="
+    url:
+      js: "https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+  imagesloaded:
+    url:
+      js: "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js"
+
+# =============================================================================
+# Features
+# =============================================================================
+
+enable_math: true
+lang:        en
+
+# =============================================================================
+# Plugins
+# =============================================================================
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-sitemap
+
+# =============================================================================
+# Permalinks and encoding
+# =============================================================================
+
+permalink: pretty
+encoding:  utf-8
+
+# =============================================================================
+# Include / exclude
+# Jekyll excludes directories that start with _ by default.
+# _pages/ must be explicitly included so Jekyll processes the files.
+# =============================================================================
+
+include:
+  - _pages
+
+exclude:
+  - AGENTS.md
+  - Personal-Quant-Site-Deep-Research.md
+  - _pages/engineering.md
+  - _pages/methods.md
+  - _projects/2026-01-01-memo-1.md
+  - _projects/2026-01-15-memo-2.md
+  - _projects/2026-02-01-memo-3.md
+  - node_modules
+  - vendor
+  - Gemfile.lock
+  - "*.sh"

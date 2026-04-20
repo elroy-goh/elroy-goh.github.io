@@ -1,0 +1,10 @@
+.jekyll-metadata
+Gemfile.lock
+_site/
+.DS_Store
+**/.DS_Store
+AGENTS.md
+signal_eval/
+backtest_analytics/
+backtest_checklist*
+Notebooks/

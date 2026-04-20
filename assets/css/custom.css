@@ -1,0 +1,350 @@
+/* =============================================================================
+   Quant Research Dossier — custom styles
+   Layered on top of al-folio's base theme. Edit freely.
+   ============================================================================= */
+
+/* ── Shared tokens ─────────────────────────────────────────────────────────── */
+
+:root {
+  --qr-accent:       #1a56db;   /* primary blue */
+  --qr-accent-dark:  #1340a8;
+  --qr-muted:        #6b7280;   /* grey for meta / tags */
+  --qr-border:       #e5e7eb;
+  --qr-bg-card:      #f9fafb;
+  --qr-radius:       6px;
+  --qr-max-width:    820px;
+}
+
+/* ── Hero section ──────────────────────────────────────────────────────────── */
+
+.qr-hero {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--qr-border);
+  margin-bottom: 2.5rem;
+}
+
+.qr-hero__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.qr-hero__body {
+  min-width: 0;
+}
+
+.qr-hero__media {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.qr-hero__headshot-wrap {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.qr-hero__headshot {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.qr-hero__headline {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+}
+
+.qr-hero__sub {
+  font-size: 1rem;
+  color: var(--qr-muted);
+  margin-bottom: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.qr-hero__pitch {
+  font-size: 1.05rem;
+  max-width: var(--qr-max-width);
+  margin-bottom: 1.1rem;
+  line-height: 1.6;
+}
+
+.qr-hero__bullets {
+  padding-left: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.qr-hero__bullets li {
+  margin-bottom: 0.35rem;
+  line-height: 1.5;
+}
+
+.qr-hero__cta {
+  margin-bottom: 1rem;
+}
+
+.qr-hero__links {
+  font-size: 0.9rem;
+  color: var(--qr-muted);
+}
+
+.qr-hero__links a {
+  color: var(--qr-muted);
+  text-decoration: none;
+}
+
+.qr-hero__links a:hover {
+  color: var(--qr-accent);
+  text-decoration: underline;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────────────── */
+
+.qr-btn {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--qr-radius);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.qr-btn--primary {
+  background: var(--qr-accent);
+  color: #fff;
+  border: 1px solid var(--qr-accent);
+}
+
+.qr-btn--primary:hover {
+  background: var(--qr-accent-dark);
+  border-color: var(--qr-accent-dark);
+  color: #fff;
+  text-decoration: none;
+}
+
+.qr-btn--secondary {
+  background: transparent;
+  color: var(--qr-accent);
+  border: 1px solid var(--qr-accent);
+}
+
+.qr-btn--secondary:hover {
+  background: var(--qr-accent);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ── Project / research cards ─────────────────────────────────────────────── */
+
+.qr-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.qr-card {
+  background: var(--qr-bg-card);
+  border: 1px solid var(--qr-border);
+  border-radius: var(--qr-radius);
+  padding: 1.25rem 1.35rem;
+}
+
+.qr-card--link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.qr-card--link:hover,
+.qr-card--link:focus {
+  color: inherit;
+  text-decoration: none;
+  border-color: #d1d5db;
+  box-shadow: 0 10px 24px rgba(26, 86, 219, 0.08);
+  transform: translateY(-1px);
+}
+
+.qr-card--link:focus-visible {
+  outline: 2px solid var(--qr-accent);
+  outline-offset: 2px;
+}
+
+.qr-card--link h3,
+.qr-card--link p,
+.qr-card--link .qr-card__tags {
+  text-decoration: none;
+}
+
+.qr-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.qr-card__tags {
+  font-size: 0.78rem;
+  color: var(--qr-muted);
+  margin-bottom: 0.6rem;
+}
+
+.qr-card p:last-child {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+/* ── Research memo pages ──────────────────────────────────────────────────── */
+
+.qr-memo-meta {
+  margin: 1.25rem 0 2rem;
+  padding: 1.25rem 1.35rem;
+  background: linear-gradient(135deg, #f8fbff 0%, #f3f4f6 100%);
+  border: 1px solid var(--qr-border);
+  border-radius: 10px;
+}
+
+.qr-memo-meta p:last-child {
+  margin-bottom: 0;
+}
+
+.qr-memo-meta__eyebrow {
+  margin-bottom: 0.5rem;
+  color: var(--qr-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.qr-memo-meta__actions {
+  margin: 1rem 0 0.9rem;
+}
+
+.qr-figure {
+  margin: 1.75rem 0 2rem;
+  padding: 0.85rem;
+  background: #fff;
+  border: 1px solid var(--qr-border);
+  border-radius: 10px;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.05);
+}
+
+.qr-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.qr-figure figcaption {
+  margin-top: 0.75rem;
+  color: var(--qr-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* ── Pipeline diagram (engineering page) ───────────────────────────────────── */
+
+.qr-pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0 2rem;
+  padding: 1.25rem;
+  background: var(--qr-bg-card);
+  border: 1px solid var(--qr-border);
+  border-radius: var(--qr-radius);
+  overflow-x: auto;
+}
+
+.qr-pipeline__stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--qr-border);
+  border-radius: var(--qr-radius);
+  padding: 0.6rem 0.9rem;
+  min-width: 100px;
+  text-align: center;
+}
+
+.qr-pipeline__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.qr-pipeline__desc {
+  font-size: 0.72rem;
+  color: var(--qr-muted);
+  margin-top: 0.2rem;
+  line-height: 1.4;
+}
+
+.qr-pipeline__arrow {
+  font-size: 1.2rem;
+  color: var(--qr-muted);
+  flex-shrink: 0;
+}
+
+/* ── Page spacing ─────────────────────────────────────────────────────────── */
+
+.post-header {
+  margin-bottom: 2rem;
+}
+
+.post-content h2 {
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+/* ── Footer ────────────────────────────────────────────────────────────────── */
+
+.qr-footer {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--qr-border);
+  font-size: 0.875rem;
+  color: var(--qr-muted);
+}
+
+.qr-footer a {
+  color: var(--qr-muted);
+  text-decoration: none;
+}
+
+.qr-footer a:hover {
+  color: var(--qr-accent);
+  text-decoration: underline;
+}
+
+.footer {
+  margin-top: 4rem;
+  padding-top: 1rem;
+}
+
+/* ── Responsive tweaks ─────────────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .qr-hero__layout { grid-template-columns: 1fr; }
+  .qr-hero__media { justify-content: flex-start; }
+  .qr-hero__headshot-wrap { width: 180px; height: 180px; }
+  .qr-hero__headline { font-size: 1.5rem; }
+  .qr-card-grid      { grid-template-columns: 1fr; }
+  .qr-pipeline       { flex-direction: column; align-items: flex-start; }
+  .qr-pipeline__arrow { transform: rotate(90deg); align-self: center; }
+}
