@@ -206,6 +206,56 @@
   line-height: 1.55;
 }
 
+/* ── Research memo pages ──────────────────────────────────────────────────── */
+
+.qr-memo-meta {
+  margin: 1.25rem 0 2rem;
+  padding: 1.25rem 1.35rem;
+  background: linear-gradient(135deg, #f8fbff 0%, #f3f4f6 100%);
+  border: 1px solid var(--qr-border);
+  border-radius: 10px;
+}
+
+.qr-memo-meta p:last-child {
+  margin-bottom: 0;
+}
+
+.qr-memo-meta__eyebrow {
+  margin-bottom: 0.5rem;
+  color: var(--qr-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.qr-memo-meta__actions {
+  margin: 1rem 0 0.9rem;
+}
+
+.qr-figure {
+  margin: 1.75rem 0 2rem;
+  padding: 0.85rem;
+  background: #fff;
+  border: 1px solid var(--qr-border);
+  border-radius: 10px;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.05);
+}
+
+.qr-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.qr-figure figcaption {
+  margin-top: 0.75rem;
+  color: var(--qr-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
 /* ── Pipeline diagram (engineering page) ───────────────────────────────────── */
 
 .qr-pipeline {

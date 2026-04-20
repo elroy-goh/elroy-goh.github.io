@@ -13,7 +13,7 @@
   
   
     
-      CV | Quantitative Research Dossier
+      Research | Quantitative Research Dossier
     
   
 </title>
@@ -77,7 +77,7 @@
   <link rel="shortcut icon" href="/assets/img/">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="https://elroy-goh.github.io/cv/">
+<link rel="canonical" href="https://elroy-goh.github.io/research/">
 
 
 
@@ -123,9 +123,9 @@
               Home
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="/research/">
-              Research
+              Research<span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
@@ -133,9 +133,9 @@
               Notes
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="/cv/">
-              CV<span class="sr-only">(current)</span>
+              CV
             </a>
           </li>
           <li class="nav-item">
@@ -159,94 +159,43 @@
 
 <div class="post">
   <header class="post-header">
-    <h1 class="post-title">CV</h1>
+    <h1 class="post-title">Research</h1>
   </header>
 
   <article class="post-content">
-    <p>
-  <a class="qr-btn qr-btn--primary" href="/assets/pdf/cv.pdf">Download full CV (PDF)</a>
-</p>
+    <p>Each memo follows a full research lifecycle: hypothesis, data selection, methodology, validation design, results, robustness checks, failure analysis, and implementation notes. Click through for the full writeup.</p>
 
 <hr />
 
-<h2 id="summary">Summary</h2>
+<div class="qr-card-grid">
+  
+  
+    <a class="qr-card qr-card--link" href="/research/2026-04-20-wti-crude-futures-signal-research/">
+      <h3>WTI Crude Futures Signal Research</h3>
+      
+        <p class="qr-card__tags">Commodity futures · WTI crude · Signal research · Backtesting</p>
+      
+      
+        <p>A notebook-driven commodity futures memo focused on WTI signal research, including EDA, predictive diagnostics, regime conditioning, and simplified backtest analysis.</p>
+      
+    </a>
+  
 
-<p>Quantitative researcher with 5+ years’ experience developing and deploying systematic trading strategies in energy and commodity markets. Specialised in alpha signal design, regime-aware validation, and execution-aware implementation. Experience spans the full research lifecycle from signal discovery and backtesting to production deployment and live trading.</p>
+  <div class="qr-card">
+    <h3>Crack Spread Signal Research (WIP)</h3>
+    <p class="qr-card__tags">Energy futures · Crack spreads · Work in progress</p>
+    <p>An upcoming research notebook studying crack spread signals, their construction, and whether they carry useful predictive information once costs and implementation constraints are accounted for.</p>
+  </div>
 
-<hr />
-
-<h2 id="experience">Experience</h2>
-
-<h3 id="gunvor-group-ltd">Gunvor Group Ltd</h3>
-<p><strong>Desk Quant / Trading Assistant</strong><br />
-Singapore · Jun 2021 – Sep 2025</p>
-
-<ul>
-  <li>Developed and deployed systematic trading strategies across energy markets, combining mean-reversion, trend-following, and fundamental signals.</li>
-  <li>Evaluated signals using information coefficient (IC), turnover, and capacity constraints, with regime-conditioned performance analysis prior to live deployment.</li>
-  <li>Analysed signal decay, robustness, and cross-market generalisation using walk-forward and out-of-sample validation frameworks.</li>
-  <li>Researched academic and industry literature (e.g. carry, momentum, basis mean-reversion) to source and refine new alpha signals.</li>
-  <li>Executed OTC derivatives trades (100-500 kb/d exposure) across crude and refined products, translating systematic signals into trade execution under liquidity, timing, and market impact constraints.</li>
-  <li>Built end-to-end automation pipeline for real-time signal ingestion, order routing, position reconciliation, and exception handling across multiple exchanges.</li>
-  <li>Optimised proprietary VNPY-based execution platform, resolving race conditions and eliminating order/trade state inconsistencies during high-frequency updates.</li>
-  <li>Implemented real-time monitoring and alerting systems for fills and strategy halts, improving execution reliability and reducing unmonitored outages.</li>
-  <li>Developed execution algorithms for energy futures trading across fragmented liquidity venues.</li>
-  <li>Designed and maintained data infrastructure (PostgreSQL, MongoDB) for tick-level and daily market data, enabling efficient research and backtesting workflows.</li>
-  <li>Mentored junior trading assistants on execution systems and operational workflows.</li>
-</ul>
-
-<h3 id="olam-international">Olam International</h3>
-<p><strong>Risk Analyst</strong><br />
-Singapore · Nov 2019 – Jun 2021</p>
-
-<ul>
-  <li>Researched and implemented risk models (VaR, CVaR, Greeks) for commodity trading portfolios, with backtesting and model validation.</li>
-  <li>Built Python-based dashboard for real-time risk monitoring (P&amp;L attribution, delta, VaR) across trading books.</li>
-  <li>Supported migration to new database infrastructure for risk systems, coordinating across trading, development, and data teams.</li>
-</ul>
+  <div class="qr-card">
+    <h3>Cross-Asset Futures Microstructure &amp; Roll Characteristics (WIP)</h3>
+    <p class="qr-card__tags">Agri · Metals · Fixed income · Energy · Work in progress</p>
+    <p>An upcoming notebook on bid/ask spreads across products and times of day, with an additional section on liquidity across tenors and what that reveals about roll behaviour in each asset class.</p>
+  </div>
+</div>
 
 <hr />
 
-<h2 id="education">Education</h2>
-
-<h3 id="singapore-management-university">Singapore Management University</h3>
-<p><strong>MSc Quantitative Finance</strong><br />
-Aug 2025 – Jul 2026 · cGPA 4.0 / 4.0</p>
-
-<p>Modules: Stochastic Modelling, Derivatives, Quantitative Trading Strategies, Econometrics, Portfolio Management, Market Microstructure &amp; Algorithmic Trading.</p>
-
-<h3 id="imperial-college-business-school">Imperial College Business School</h3>
-<p><strong>MSc Investment and Wealth Management</strong><br />
-Aug 2016 – Jul 2017 · Distinction in core modules</p>
-
-<p>Modules: Asset Allocation &amp; Investment Strategies, Derivatives, Financial Econometrics, Portfolio Management, Mathematics for Finance.</p>
-
-<h3 id="university-of-southampton">University of Southampton</h3>
-<p><strong>BSc Accounting &amp; Finance, First Class Honours</strong><br />
-Sep 2013 – Jun 2016</p>
-
-<p>Awarded the Deloitte Management Prize for top 2nd-year undergraduate performance.</p>
-
-<hr />
-
-<h2 id="skills">Skills</h2>
-
-<ul>
-  <li><strong>Quantitative Methods:</strong> Signal research &amp; alpha generation; factor construction &amp; decay analysis; time-series modelling (AR, GARCH, cointegration, regime detection); statistical arbitrage; backtesting &amp; walk-forward validation; VaR / CVaR; copula methods; Monte Carlo simulation; options pricing (BSM, SABR, Displaced Diffusion).</li>
-  <li><strong>Programming:</strong> Python (NumPy, pandas, SciPy, statsmodels, scikit-learn, PyTorch); VNPY; SQL; PostgreSQL; MongoDB.</li>
-  <li><strong>Data &amp; Infrastructure:</strong> Tick and daily market data pipelines; real-time signal ingestion; automated order routing; Bloomberg Terminal; Refinitiv Datastream.</li>
-</ul>
-
-<hr />
-
-<h2 id="certifications--achievements">Certifications &amp; Achievements</h2>
-
-<ul>
-  <li>Financial Risk Manager (FRM) · Passed Levels I &amp; II · GARP.</li>
-  <li>CFA Level I passed.</li>
-  <li>1st Place - JP Morgan Business Challenge 2015 · 1st Prize - PwC Financial Challenge 2015.</li>
-  <li>Languages: English (native), Mandarin (native), Cantonese (conversational) · Work authorisation: Singapore Citizen.</li>
-</ul>
 
   </article>
 </div>
