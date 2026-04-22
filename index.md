@@ -50,14 +50,16 @@ This site is in the midst of expanding. Additional portfolio materials are being
 
 Current work in progress includes a research notebook on crack spread signals, and a broader microstructure notebook on bid/ask spreads across agriculture, metals, fixed income, and energy futures at different times of day. That second notebook will also look at liquidity across tenors and what that implies for roll behaviour across asset classes.
 
+Additional unpublished stubs are queued on partial least squares for signal extraction, and on regime classification using Markov chains and hidden Markov models.
+
 ---
 
 ## Research Memos
 
-<div class="qr-card-grid">
+<div class="qr-card-rail" aria-label="Research memos and upcoming topics">
   {% assign projects_preview = site.projects | sort: "date" | reverse %}
   {% for project in projects_preview limit:3 %}
-    <a class="qr-card qr-card--link" href="{{ project.url | relative_url }}">
+    <a class="qr-card qr-card--link qr-card--rail" href="{{ project.url | relative_url }}">
       <h3>{{ project.title }}</h3>
       {% if project.project_tags %}
       <p class="qr-card__tags">{{ project.project_tags }}</p>
@@ -70,16 +72,28 @@ Current work in progress includes a research notebook on crack spread signals, a
     </a>
   {% endfor %}
 
-  <div class="qr-card">
+  <div class="qr-card qr-card--rail">
     <h3>Crack Spread Signal Research (WIP)</h3>
     <p class="qr-card__tags">Energy futures · Crack spreads · Work in progress</p>
     <p>An upcoming research notebook studying crack spread signals, their construction, and whether they remain useful once costs and implementation constraints are considered.</p>
   </div>
 
-  <div class="qr-card">
+  <div class="qr-card qr-card--rail">
     <h3>Cross-Asset Futures Microstructure &amp; Roll Characteristics (WIP)</h3>
     <p class="qr-card__tags">Agri · Metals · Fixed income · Energy · Work in progress</p>
     <p>An upcoming notebook examining bid/ask spreads across various products and times of day, with direct relevance to trade execution. A separate section dedicated to tenor liquidity and roll behaviour across asset classes will also be presented.</p>
+  </div>
+
+  <div class="qr-card qr-card--rail">
+    <h3>Partial Least Squares for Signal Extraction (WIP)</h3>
+    <p class="qr-card__tags">Statistical learning · Dimensionality reduction · Work in progress</p>
+    <p>An unpublished research stub on using partial least squares to compress correlated features into latent components, then testing whether those components improve signal stability, interpretability, and out-of-sample forecasting performance.</p>
+  </div>
+
+  <div class="qr-card qr-card--rail">
+    <h3>Markov Chain &amp; HMM Regime Switching Models (WIP)</h3>
+    <p class="qr-card__tags">Regime detection · Hidden Markov Models · Work in progress</p>
+    <p>An unpublished research stub on explicit regime classification with Markov chains and hidden Markov models, with a focus on identifying shifts in volatility, trend persistence, and mean-reversion behaviour across market states.</p>
   </div>
 </div>
 
