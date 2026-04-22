@@ -37,7 +37,7 @@ Each research memo presents my approach to quantitative signal research, with a 
     <p>An upcoming notebook on bid/ask spreads across products and times of day, with an additional section on liquidity across tenors and what that reveals about roll behaviour in each asset class.</p>
   </div>
 
-  <div class="qr-card qr-card--rail">
+  <!-- <div class="qr-card qr-card--rail">
     <h3>Partial Least Squares for Signal Extraction (WIP)</h3>
     <p class="qr-card__tags">Statistical learning · Dimensionality reduction · Work in progress</p>
     <p>An unpublished research stub on using partial least squares to compress correlated features into latent components, then testing whether those components improve signal stability, interpretability, and out-of-sample forecasting performance.</p>
@@ -47,7 +47,7 @@ Each research memo presents my approach to quantitative signal research, with a 
     <h3>Markov Chain &amp; HMM Regime Switching Models (WIP)</h3>
     <p class="qr-card__tags">Regime detection · Hidden Markov Models · Work in progress</p>
     <p>An unpublished research stub on explicit regime classification with Markov chains and hidden Markov models, with a focus on identifying shifts in volatility, trend persistence, and mean-reversion behaviour across market states.</p>
-  </div>
+  </div> -->
 </div>
 
 ---
