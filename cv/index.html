@@ -1,96 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><!-- Metadata, OpenGraph and Schema.org -->
-
-
-
+  <head><!-- Local override of al-folio's _includes/head.liquid.
+     Why: the upstream version emits <link href=""> for MDB CSS and Google
+     Fonts when those keys are absent from the config.  An empty href causes
+     the browser to request the current page URL as a stylesheet (harmless but
+     adds a spurious round-trip and can delay first paint).  This override
+     loads exactly the assets we need with no empty tags. -->
 
 <!-- Standard metadata -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Page title -->
 <title>
-  
-  
-    
-      CV | Quantitative Research Dossier
-    
-  
+    CV | Quantitative Research Dossier
 </title>
+
+<!-- Author / description -->
 <meta name="author" content="Elroy Goh">
 <meta name="description" content="Systematic cross-asset and commodities microstructure research with production-grade research engineering.">
 
+<!-- Open Graph (social sharing) -->
+<meta property="og:title"       content="CV | Quantitative Research Dossier">
+<meta property="og:description" content="Systematic cross-asset and commodities microstructure research with production-grade research engineering.">
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://elroy-goh.github.io/cv/">
 
+<!-- Canonical URL -->
+<link rel="canonical" href="https://elroy-goh.github.io/cv/">
 
-
-
-
-
-
-
-
-<!-- Security: Content Security Policy -->
-<!-- Permissive CSP suitable for academic websites. Allows external images, videos, and common embed services. -->
-<!-- To customize for your needs, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+<!-- Permissive CSP suitable for a personal research site -->
 <meta
   http-equiv="Content-Security-Policy"
   content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"
 >
 
-<!-- Bootstrap & MDB -->
+<!-- ── Stylesheets ───────────────────────────────────────────────────────── -->
+
+<!-- Bootstrap 4 (al-folio compiled asset) -->
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-<link
-  rel="stylesheet"
-  href=""
-  integrity=""
-  crossorigin="anonymous"
->
 
-
-
-<!-- Fonts & Icons -->
+<!-- Icon fonts (al-folio bundled) -->
 <link defer rel="stylesheet" href="/assets/css/academicons.min.css">
 <link defer rel="stylesheet" href="/assets/css/scholar-icons.css">
-<link
-  defer
-  rel="stylesheet"
-  type="text/css"
-  href=""
->
 
-<!-- Code Syntax Highlighting -->
-<link
-  defer
-  rel="stylesheet"
-  href="/assets/css/jekyll-pygments-themes-github.css"
-  media=""
-  id="highlight_theme_light"
->
+<!-- Code syntax highlighting (light theme) -->
+<link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css"
+      id="highlight_theme_light">
 
-
-
-<!-- Styles -->
-
-
-
-
-  <link rel="shortcut icon" href="/assets/img/">
-
+<!-- al-folio main theme stylesheet -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="https://elroy-goh.github.io/cv/">
 
+<!-- Favicon -->
 
-
-
-
-
-
-
-
-
-
-
-
+    <!-- Custom styles — loaded here (not body) so they are applied before
+         first paint. Avoids the FOUC on GitHub Pages production builds that
+         caused qr-card grids to render without their grid/border styles. -->
+    <link rel="stylesheet" href="/assets/css/custom.css">
   </head>
 
   <body class=" fixed-top-nav sticky-bottom-footer"><!-- Local override of al-folio's header.liquid — no custom plugin tags. -->
@@ -152,12 +119,7 @@
 
 
     <div class="container mt-5">
-      <!-- Inject custom stylesheet. al-folio's current head.liquid has no hook for
-     user CSS, so we load it here. HTML5 allows <link> in <body> and all
-     browsers apply it correctly. -->
-<link rel="stylesheet" href="/assets/css/custom.css">
-
-<div class="post">
+      <div class="post">
   <header class="post-header">
     <h1 class="post-title">CV</h1>
   </header>
