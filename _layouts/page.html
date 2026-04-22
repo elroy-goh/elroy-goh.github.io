@@ -2,11 +2,6 @@
 layout: default
 ---
 
-<!-- Inject custom stylesheet. al-folio's current head.liquid has no hook for
-     user CSS, so we load it here. HTML5 allows <link> in <body> and all
-     browsers apply it correctly. -->
-<link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
-
 <div class="post">
   {%- if page.title and page.title != "" %}
   <header class="post-header">

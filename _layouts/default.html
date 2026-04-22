@@ -17,11 +17,17 @@
 #    that drive the navbar and footer positioning CSS.
 #  • Delegates <head> and the header/footer chrome to the same al-folio
 #    includes used by the remote theme.
+#  • Loads custom.css in <head> (not body) so styles are applied before first
+#    paint — prevents unstyled qr-card grids on GitHub Pages' production build.
 ---
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'en' }}">
   <head>
     {%- include head.liquid %}
+    <!-- Custom styles — loaded here (not body) so they are applied before
+         first paint. Avoids the FOUC on GitHub Pages production builds that
+         caused qr-card grids to render without their grid/border styles. -->
+    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
   </head>
 
   <body class="{%- if site.navbar_fixed %} fixed-top-nav{%- endif %}{%- unless site.footer_fixed %} sticky-bottom-footer{%- endunless %}">

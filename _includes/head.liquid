@@ -1,0 +1,60 @@
+<!-- Local override of al-folio's _includes/head.liquid.
+     Why: the upstream version emits <link href=""> for MDB CSS and Google
+     Fonts when those keys are absent from the config.  An empty href causes
+     the browser to request the current page URL as a stylesheet (harmless but
+     adds a spurious round-trip and can delay first paint).  This override
+     loads exactly the assets we need with no empty tags. -->
+
+<!-- Standard metadata -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Page title -->
+<title>
+  {%- if page.title and page.title != "" %}
+    {{ page.title }} | {{ site.title }}
+  {%- else %}
+    {{ site.title }}
+  {%- endif %}
+</title>
+
+<!-- Author / description -->
+<meta name="author" content="{{ site.first_name }} {{ site.last_name }}">
+<meta name="description" content="{{ page.description | default: site.description }}">
+
+<!-- Open Graph (social sharing) -->
+<meta property="og:title"       content="{%- if page.title and page.title != "" %}{{ page.title }} | {{ site.title }}{%- else %}{{ site.title }}{%- endif %}">
+<meta property="og:description" content="{{ page.description | default: site.description }}">
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="{{ page.url | absolute_url }}">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+
+<!-- Permissive CSP suitable for a personal research site -->
+<meta
+  http-equiv="Content-Security-Policy"
+  content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"
+>
+
+<!-- ── Stylesheets ───────────────────────────────────────────────────────── -->
+
+<!-- Bootstrap 4 (al-folio compiled asset) -->
+<link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url }}">
+
+<!-- Icon fonts (al-folio bundled) -->
+<link defer rel="stylesheet" href="{{ '/assets/css/academicons.min.css' | relative_url }}">
+<link defer rel="stylesheet" href="{{ '/assets/css/scholar-icons.css' | relative_url }}">
+
+<!-- Code syntax highlighting (light theme) -->
+<link defer rel="stylesheet" href="{{ '/assets/css/jekyll-pygments-themes-github.css' | relative_url }}"
+      id="highlight_theme_light">
+
+<!-- al-folio main theme stylesheet -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<!-- Favicon -->
+{%- if site.icon and site.icon != "" %}
+<link rel="shortcut icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url }}">
+{%- endif %}
