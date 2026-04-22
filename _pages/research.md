@@ -40,6 +40,4 @@ Each research memo presents my approach to quantitative signal research, with a 
 
 ---
 
-**Disclaimer**
-
-AI tools have assisted in the preparation of these notebooks, primarily for coding and deepening topic understanding. All core ideas, analytical frameworks, and conclusions are my own, informed by professional experience and independent study. Where AI-generated content was used, it was thoroughly reviewed and validated.
+All analytical frameworks, interpretations, and conclusions in these notebooks are my own.

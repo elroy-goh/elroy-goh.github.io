@@ -26,12 +26,7 @@ Although my practical experience has been concentrated in energy futures, my res
 
 Further details on my background and experiences can be found in [my CV](/cv).
 
-**Disclaimer**
--
-
-The use of AI tools have been involved in writing up this notebook. Though to be clear, all core ideas and methodologies were from me, with knowledge synthesised from reading various books related to quantitative investing and from my college studies. ChatGPT / Claude were involved in coding and understanding some topics in more depth. Where AI tools were used, the generated outputs were checked through thoroughly.
-
-In other words, all analytical frameworks and conclusions are my own. Notwithstanding the above, I am proficient in Python programming, with more than 8 years of working experience using Python.
+All analytical frameworks, interpretations, and conclusions in this notebook are my own.
 
 ---
 
