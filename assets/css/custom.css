@@ -206,6 +206,30 @@
   line-height: 1.55;
 }
 
+.qr-card-rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 360px);
+  gap: 1rem;
+  margin: 1.25rem 0 2rem;
+  padding: 0.15rem 0.1rem 0.85rem 0.3rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+}
+
+.qr-card--rail {
+  height: 100%;
+  scroll-snap-align: start;
+}
+
+.qr-card--link.qr-card--rail:hover,
+.qr-card--link.qr-card--rail:focus {
+  transform: none;
+  box-shadow: 0 12px 28px rgba(26, 86, 219, 0.1);
+}
+
 /* ── Research memo pages ──────────────────────────────────────────────────── */
 
 .qr-memo-meta {
@@ -345,6 +369,7 @@
   .qr-hero__headshot-wrap { width: 180px; height: 180px; }
   .qr-hero__headline { font-size: 1.5rem; }
   .qr-card-grid      { grid-template-columns: 1fr; }
+  .qr-card-rail      { grid-auto-columns: minmax(245px, 85vw); }
   .qr-pipeline       { flex-direction: column; align-items: flex-start; }
   .qr-pipeline__arrow { transform: rotate(90deg); align-self: center; }
 }
