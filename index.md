@@ -56,10 +56,10 @@ Additional unpublished stubs are queued on partial least squares for signal extr
 
 ## Research Memos
 
-<div class="qr-card-grid">
+<div class="qr-card-rail" aria-label="Research memos and upcoming topics">
   {% assign projects_preview = site.projects | sort: "date" | reverse %}
   {% for project in projects_preview limit:3 %}
-    <a class="qr-card qr-card--link" href="{{ project.url | relative_url }}">
+    <a class="qr-card qr-card--link qr-card--rail" href="{{ project.url | relative_url }}">
       <h3>{{ project.title }}</h3>
       {% if project.project_tags %}
       <p class="qr-card__tags">{{ project.project_tags }}</p>
@@ -72,13 +72,13 @@ Additional unpublished stubs are queued on partial least squares for signal extr
     </a>
   {% endfor %}
 
-  <div class="qr-card">
+  <div class="qr-card qr-card--rail">
     <h3>Crack Spread Signal Research (WIP)</h3>
     <p class="qr-card__tags">Energy futures · Crack spreads · Work in progress</p>
     <p>An upcoming research notebook studying crack spread signals, their construction, and whether they remain useful once costs and implementation constraints are considered.</p>
   </div>
 
-  <div class="qr-card">
+  <div class="qr-card qr-card--rail">
     <h3>Cross-Asset Futures Microstructure &amp; Roll Characteristics (WIP)</h3>
     <p class="qr-card__tags">Agri · Metals · Fixed income · Energy · Work in progress</p>
     <p>An upcoming notebook examining bid/ask spreads across various products and times of day, with direct relevance to trade execution. A separate section dedicated to tenor liquidity and roll behaviour across asset classes will also be presented.</p>
