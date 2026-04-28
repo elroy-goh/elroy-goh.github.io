@@ -50,8 +50,6 @@ This site is in the midst of expanding. Additional portfolio materials are being
 
 A broader microstructure notebook is in progress on bid/ask spreads across agriculture, metals, fixed income, and energy futures at different times of day. That notebook will also look at liquidity across tenors and what that implies for roll behaviour across asset classes.
 
-Additional unpublished stubs are queued on partial least squares for signal extraction, and on regime classification using Markov chains and hidden Markov models.
-
 ---
 
 ## Research Memos
