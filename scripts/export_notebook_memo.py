@@ -49,16 +49,16 @@ def build_front_matter(args: argparse.Namespace, notebook_name: str) -> str:
 
 
 def render_intro(args: argparse.Namespace, notebook_name: str) -> str:
-    notebook_href = f"/{notebook_name.replace(' ', '%20')}"
+    download_name = args.download or f"{notebook_name.removesuffix('.ipynb')}.zip"
+    download_href = f"/notebooks/{download_name.replace(' ', '%20')}"
     return "\n".join(
         [
             '<div class="qr-memo-meta">',
             '  <p class="qr-memo-meta__eyebrow">Research Memo</p>',
             f"  <p>{html.escape(args.summary)}</p>",
             '  <div class="qr-memo-meta__actions">',
-            f'    <a class="qr-btn qr-btn--primary" href="{notebook_href}">Download Notebook</a>',
+            f'    <a class="qr-btn qr-btn--primary" href="{download_href}">Download Notebook</a>',
             "  </div>",
-            "  <p><strong>Publishing workflow:</strong> this page is generated from the executed notebook. Re-run the exporter after updating notebook text, tables, or charts to keep the memo synchronized.</p>",
             "</div>",
             "",
         ]
@@ -131,6 +131,7 @@ def main() -> None:
     parser.add_argument("--description", required=True)
     parser.add_argument("--summary", required=True)
     parser.add_argument("--tags", required=True)
+    parser.add_argument("--download")
     args = parser.parse_args()
     export_notebook(args)
 

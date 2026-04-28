@@ -48,7 +48,7 @@ permalink: "/"
 
 This site is in the midst of expanding. Additional portfolio materials are being prepared for publication.
 
-Current work in progress includes a research notebook on crack spread signals, and a broader microstructure notebook on bid/ask spreads across agriculture, metals, fixed income, and energy futures at different times of day. That second notebook will also look at liquidity across tenors and what that implies for roll behaviour across asset classes.
+A broader microstructure notebook is in progress on bid/ask spreads across agriculture, metals, fixed income, and energy futures at different times of day. That notebook will also look at liquidity across tenors and what that implies for roll behaviour across asset classes.
 
 Additional unpublished stubs are queued on partial least squares for signal extraction, and on regime classification using Markov chains and hidden Markov models.
 
@@ -71,12 +71,6 @@ Additional unpublished stubs are queued on partial least squares for signal extr
       {% endif %}
     </a>
   {% endfor %}
-
-  <div class="qr-card qr-card--rail">
-    <h3>Crack Spread Signal Research (WIP)</h3>
-    <p class="qr-card__tags">Energy futures · Crack spreads · Work in progress</p>
-    <p>An upcoming research notebook studying crack spread signals, their construction, and whether they remain useful once costs and implementation constraints are considered.</p>
-  </div>
 
   <div class="qr-card qr-card--rail">
     <h3>Cross-Asset Futures Microstructure &amp; Roll Characteristics (WIP)</h3>

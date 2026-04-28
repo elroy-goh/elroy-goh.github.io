@@ -26,12 +26,6 @@ Each research memo presents my approach to quantitative signal research, with a 
   {% endfor %}
 
   <div class="qr-card">
-    <h3>Crack Spread Signal Research (WIP)</h3>
-    <p class="qr-card__tags">Energy futures · Crack spreads · Work in progress</p>
-    <p>An upcoming research notebook studying crack spread signals, their construction, and whether they carry useful predictive information once costs and implementation constraints are accounted for.</p>
-  </div>
-
-  <div class="qr-card">
     <h3>Cross-Asset Futures Microstructure &amp; Roll Characteristics (WIP)</h3>
     <p class="qr-card__tags">Agri · Metals · Fixed income · Energy · Work in progress</p>
     <p>An upcoming notebook on bid/ask spreads across products and times of day, with an additional section on liquidity across tenors and what that reveals about roll behaviour in each asset class.</p>
