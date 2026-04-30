@@ -13,7 +13,7 @@ layout: page
 
 ## Summary
 
-Quantitative researcher with 5+ years' experience developing and deploying systematic trading strategies in energy and commodity markets. Specialised in alpha signal design, regime-aware validation, and execution-aware implementation. Experience spans the full research lifecycle from signal discovery and backtesting to production deployment and live trading.
+Desk quant and systematic trading researcher with 5+ years' experience developing and deploying systematic trading strategies in energy and commodity markets. Specialised in alpha signal design, regime-aware validation, and execution-aware implementation. Experience spans the full research lifecycle from signal discovery and backtesting to production deployment and live trading.
 
 ---
 
