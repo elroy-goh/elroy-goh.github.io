@@ -48,8 +48,6 @@ permalink: "/"
 
 This site is in the midst of expanding. Additional portfolio materials are being prepared for publication.
 
-A broader microstructure notebook is in progress on bid/ask spreads across agriculture, metals, fixed income, and energy futures at different times of day. That notebook will also look at liquidity across tenors and what that implies for roll behaviour across asset classes.
-
 ---
 
 ## Research Memos
@@ -69,12 +67,6 @@ A broader microstructure notebook is in progress on bid/ask spreads across agric
       {% endif %}
     </a>
   {% endfor %}
-
-  <div class="qr-card qr-card--rail">
-    <h3>Cross-Asset Futures Microstructure &amp; Roll Characteristics (WIP)</h3>
-    <p class="qr-card__tags">Agri · Metals · Fixed income · Energy · Work in progress</p>
-    <p>An upcoming notebook examining bid/ask spreads across various products and times of day, with direct relevance to trade execution. A separate section dedicated to tenor liquidity and roll behaviour across asset classes will also be presented.</p>
-  </div>
 </div>
 
 <p><a class="qr-btn qr-btn--secondary" href="/research/">Browse all research →</a></p>

@@ -24,12 +24,6 @@ Each research memo presents my approach to quantitative signal research, with a 
       {% endif %}
     </a>
   {% endfor %}
-
-  <div class="qr-card">
-    <h3>Cross-Asset Futures Microstructure &amp; Roll Characteristics (WIP)</h3>
-    <p class="qr-card__tags">Agri · Metals · Fixed income · Energy · Work in progress</p>
-    <p>An upcoming notebook on bid/ask spreads across products and times of day, with an additional section on liquidity across tenors and what that reveals about roll behaviour in each asset class.</p>
-  </div>
 </div>
 
 ---
