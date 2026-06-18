@@ -20,9 +20,15 @@ baseurl: ""   # leave empty for a user/org site (no subdirectory)
 # is NOT loaded by jekyll-remote-theme, so we override the few includes/
 # layouts that use custom Liquid tags locally (header.liquid, footer.liquid,
 # page.html) — see those files in this repo.
+#
+# Pinned to v1.0 instead of master: tracking master left the build exposed to
+# transient jekyll-remote-theme fetch failures (the theme silently fails to
+# load instead of erroring the build, which once shipped a CSS-less page —
+# see deploy of 0c0bcbf). Pinning doesn't eliminate fetch flakiness, but it
+# keeps the theme content deterministic between builds.
 # =============================================================================
 
-remote_theme: "alshedivat/al-folio"   # latest master — head.liquid / footer.liquid present here
+remote_theme: "alshedivat/al-folio@v1.0"
 
 # =============================================================================
 # Navigation
