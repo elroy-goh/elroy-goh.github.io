@@ -101,6 +101,11 @@ defaults:
 navbar_fixed: true
 footer_fixed: false
 
+# main.scss interpolates this directly into a Sass variable
+# ($max-content-width: {{ site.max_width }};) with no fallback, so leaving it
+# unset breaks the Sass build outright. 930px is al-folio's own default.
+max_width: 930px
+
 # =============================================================================
 # Third-party libraries
 # al-folio's _includes/scripts/*.liquid files read these to emit <script> tags.
